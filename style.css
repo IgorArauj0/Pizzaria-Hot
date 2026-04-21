@@ -11,9 +11,34 @@ transition: 0.2s linear;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Define variáveis globais para cores e bordas, facilitando a manutenção e ajustes futuros */
+:root{
+ --main-color: #da190f;
+ --border: 0.1rem solid grey;
+ --bg: #13131a;
+ --bg-card: #0c0c14;
+}
+
+html {
+font-size: 62.5%;
+overflow-x: hidden; 
+/* Ocutar qualquer elemento que passe da tela horizontal */
+scroll-behavior: smooth;
+scroll-padding-top: 9rem;
+}
+
+body {
+    background: var(--bg);
+}
+
+section {
+    padding: 2rem 7%;
+    /* Garante espaçamento consistente em todas as seções */
+}
+
 
 header {
-    background-color: rgb(206, 195, 195);
+    background: var(--bg);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,6 +51,92 @@ header {
 }
 
 .logo img {
-    height: 6.5rem;
+    height: 6.5rem; 
     border-radius: 100%;
+}
+
+
+.menu-desktop nav a {
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.menu-desktop nav a:hover{
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+}
+
+.icons div {
+    margin-left: 2rem;
+}
+
+.icons div ion-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons div ion-icon:hover{
+    color: var(--main-color);
+}
+
+
+/* Primeira Section */
+#home {
+    min-height: 80vh; /*Altura mínima da section */
+    background: url(imagens/home.jpg) no-repeat; /*Add a imagem de fundo */
+    background-size: cover;/*Faz a img cobrir o container */
+    background-position: center;/*Centraliza a imagem */
+    position: relative; /*Permite posicionar elementos filhos de forma absoluta */
+    border-bottom: var(--border);/*Add borda na parte inferior */
+    display: flex;
+    align-items: center; /*Alinha os itens verticalmente ao centro */
+}
+
+#home::before {
+    content: ""; /*Cria um pseudo-elemento vazio */
+    position: absolute; /*Permite posicionar o elemento de forma absoluta */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /*Adiciona uma camada de cor preta com opacidade para melhorar a legibilidade do texto */
+}
+
+#home .content {
+    position: relative; /*Permite que o conteúdo seja posicionado acima do pseudo-elemento */
+    z-index: 2; /*Garante que o conteúdo fique acima do pseudo-elemento */
+    max-width: 600px; /*Limita a largura do conteúdo para melhor legibilidade */
+}
+
+#home .content h3 {
+    font-size: 6rem;
+    color: #fff;
+    text-transform: uppercase; /*Transforma o texto em maiúsculas */
+}
+
+#home .content p {
+    font-size: 2rem;
+    color: #ffffffbc;
+    font-weight: lighter;/*Deixa o texto mais leve */
+    line-height: 1.8; /*Aumenta o espaçamento entre as linhas para melhor legibilidade */
+    padding: 1rem 0; /*Adiciona espaçamento acima e abaixo do parágrafo */
+}
+
+.btn {
+    margin-top: 1rem;/* Adiciona espaçamento acima do botão */
+    display: inline-block; /*Permite que o botão seja clicável e tenha um comportamento de bloco */
+    padding: 0.9rem 3rem; /*Adiciona espaçamento interno ao botão (vertical e horizontal) */
+    font-size: 1.7rem; 
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer; /*Muda o cursor para indicar que o elemento é clicável */
+    border-radius: 0.5rem; /*Adiciona bordas arredondadas ao botão */
 }
