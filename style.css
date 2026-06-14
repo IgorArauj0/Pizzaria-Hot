@@ -140,3 +140,191 @@ header {
     cursor: pointer; /*Muda o cursor para indicar que o elemento é clicável */
     border-radius: 0.5rem; /*Adiciona bordas arredondadas ao botão */
 }
+
+
+/* ESTILIZANDO SEGUNDA SECTION */
+
+/* Estamos estilizando a div pai que contém as duas caixas da seção */
+.row {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    flex-wrap: wrap; /*Permite que os itens quebrem para a próxima linha em telas menores */
+    border: var(--border);
+}
+
+.row .image {
+    flex: 1 1 45rem; /*Permite que a imagem ocupe até 45rem de largura, mas também pode crescer ou encolher conforme necessário */
+}
+
+.row .image img {
+    width: 100%; /*Faz a imagem ocupar toda a largura do container */
+}
+
+.row .content {
+    flex: 1 1 45rem; /*Permite que o conteúdo ocupe até 45rem de largura, mas também pode crescer ou encolher conforme necessário */
+    padding: 2rem; /*Adiciona espaçamento interno ao conteúdo */
+}
+
+.row .content h3 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1rem; /*Adiciona espaçamento abaixo do título */
+}
+
+.row .content p {
+    font-size: 1.6rem;
+    color: #ffffffbc;
+    line-height: 1.8; /*Aumenta o espaçamento entre as linhas para melhor legibilidade */
+}
+
+.heading {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3rem;
+    font-size: 4rem;
+}
+
+.heading span {
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+/* Fim da estilização Sobre Nós */
+
+
+/* MENU */
+.menu .box-container {
+    display: grid; /* Organiza os elementos internos em um layout de grade */
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); /*Cria colunas flexíveis com largura mínima de 30rem e máxima proporcional. E também organiza as colunas automáticas: Cada uma tem no mínimo 30rem e expande igualmente (1fr) para ocupar a tela */
+    gap: 1.5rem; /* Define o espaço entre os itens*/
+}
+
+.box-container .box {
+    padding: 5rem;
+    text-align: center;
+    border: var(--border);
+    background: var(--bg-card);
+}
+
+.box img {
+    height: 18rem;
+    border-radius: 100%;
+}
+
+.box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.box .price {
+    color:#fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.box:hover {
+    background: #fff;
+}
+
+.box:hover>*{
+    color: #0c0c14;
+}
+
+
+/* Combos e Promoções */
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+
+.box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 2rem;
+}
+
+
+.box .icons a ion-icon {
+height: 3rem;
+width: 3rem;
+line-height: 3rem;
+font-size: 1.7rem;
+border: var(--border);
+color: #fff;
+margin: 0.3rem;
+}
+
+.box .icons a ion-icon:hover {
+    background: var(--main-color);
+}
+
+.box .image {
+    padding: 2.5rem 0;
+}
+
+.box .image img {
+    height: 25rem;
+}
+
+.box .content {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.content .stars {
+    padding: 1.5rem;
+}
+
+.content .stars ion-icon {
+    font-size: 1.9rem;
+    color: var(--main-color);
+}
+
+.content .price {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.content .price span {
+    font-weight: lighter;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+}
+
+/* Hover para Combos e Promoções */
+.box-container .box:hover {
+    background: #fff;
+}
+
+.box-container .box:hover .content,
+.box-container .box:hover .content * {
+    color: #0c0c14;
+}
+
+.box-container .box:hover .icons a ion-icon {
+    color: #0c0c14;
+    border-color: #0c0c14;
+}
+
+.box-container .box:hover .icons a ion-icon:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.box .icons {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+} 
